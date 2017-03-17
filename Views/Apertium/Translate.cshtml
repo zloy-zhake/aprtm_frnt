@@ -1,0 +1,18 @@
+@{ ViewData["Title"] = "Translate"; }
+
+<h2>Translate</h2>
+
+<form method="post" action="~/Apertium/Translate">
+    <div style="display: inline-block; vertical-align: top;">
+        <textarea name="source_text" cols="100" rows="10" placeholder="Введите текст для перевода.">@ViewData["source_text"]</textarea>
+    </div>
+    <div style="display: inline-block; vertical-align: top; text-align: center;">
+        Выберита направление перевода:<br />
+        <input type="radio" name="direction" value="eng-kaz" checked> eng-kaz<br />
+        <input type="radio" name="direction" value="kaz-eng"> kaz-eng<br />
+        <button>Перевести</button>
+    </div>
+    <div style="display: inline-block; vertical-align: top;">
+        <textarea name="target_text" cols="100" rows="10" readonly placeholder="Перевод появится здесь.">@ViewData["target_text"]</textarea>
+    </div>
+</form>
